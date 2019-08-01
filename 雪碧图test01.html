@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css-sprite</title>
+	<style type="text/css">
+		.box{
+   width: 200px;
+   height: 400px;
+   background: #eee;
+   text-align:center;
+   padding: 5px;
+  
+ }
+ .list-ct a{
+   text-decoration: none;  
+   color: green;
+ }
+.list-ct a:hover{
+   color: red;
+ }
+.list-ct a:active {
+   color: orange;
+ }
+
+ .list-ct{
+   list-style: none;
+ }
+ .list{
+    display: block;
+    width:40px;
+   height:40px;
+   background: #eee; 
+ }
+.list:nth-of-type(1){
+   background: #eee url(http://www.w3cplus.com/sites/default/files/blogs/2015/1507/weibo.png) no-repeat;
+  background-position: 3px 0px;
+  background-size: 3000%
+ }
+.list:nth-of-type(2){
+   background: #eee url(http://www.w3cplus.com/sites/default/files/blogs/2015/1507/weibo.png) no-repeat;
+  background-position: 3px -41px;
+  background-size: 3000%
+ }
+.list:nth-of-type(3){
+   background: #eee url(http://www.w3cplus.com/sites/default/files/blogs/2015/1507/weibo.png) no-repeat;
+  background-position: 3px -81px;
+  background-size: 3000%
+ }
+.list:nth-of-type(4){
+   background: #eee url(http://www.w3cplus.com/sites/default/files/blogs/2015/1507/weibo.png) no-repeat;
+  background-position: 3px -131px;
+  background-size: 3000%
+ }
+.list:nth-of-type(5){
+   background: #eee url(http://www.w3cplus.com/sites/default/files/blogs/2015/1507/weibo.png) no-repeat;
+  background-position: 3px -181px;
+  background-size: 3000%
+ }
+.list:nth-of-type(6){
+   background: #eee url(http://www.w3cplus.com/sites/default/files/blogs/2015/1507/weibo.png) no-repeat;
+  background-position: 3px -231px;
+  background-size: 3000%
+ }
+	</style>
+</head>
+<body>
+	<div class="box">
+       <ul class="list-ct">
+         <li class="list"></li><a href="#">男生图标</a>
+         <li class="list"></li><a href="#">女生图标</a>
+         <li class="list"></li><a href="#">黄钻会员</a>
+         <li class="list"></li><a href="#">蓝钻会员</a>
+         <li class="list"></li><a href="#">石钻会员</a>
+         <li class="list"></li><a href="#">一星等级</a>
+         
+       </ul>
+    </div>
+</body>
+</html>
