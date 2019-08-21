@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exmple01</title>
+	<!-- <link rel="stylesheet" href="cssresetcommon.css"> -->
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_1359625_pzxlb72eumn.css">
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		a {
+			text-decoration: none;
+		}
+		ul {
+			list-style:none;
+		}
+		body{
+			font: 14px/1.5 Arial;
+			color: #fff;
+			background-color: #fff;
+		}
+
+		/*css-common*/
+
+		.clearfix {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.layout {
+			width:1200px;
+		}
+	  html,body{
+	  	height: 100%;
+	  }
+
+	  header {
+	  	height: 100%;
+	  	
+	  	min-height:600px;
+	  	background: #000 url(https://img.zcool.cn/community/0123da5a26584da80120ba38c42ba9.jpg@1280w_1l_0o_100sh.jpg) center center no-repeat;
+	  	background-size: cover;
+	  	/*text-align:center;*/
+	  	/*background-position: 0 -100px;*/ /* 如果设置了这个值, 图片会随着页面缩变而缩变, 当缩小到一定值,图片不能撑满背景,就会露出 背景设置的 颜色, 出现外观bug. 
+	  	/*filter: blur(10px);*/
+	  	/*vertical-align: middle;*/
+	  	text-align:center;
+	  	position:relative;
+	  }
+	   header::before {
+	  	content:'';
+	  	display:block;
+	  	position:absolute;
+	  	top:0;
+	  	left:0;
+	  	right:0;
+	  	bottom:0;
+	  	background-color: rgba(0,0,0,0.6);
+	  }
+	  
+	  /*header::after{
+	  	content:'';
+	  	display: inline-block;
+	  	vertical-align: middle;
+	  	height:100%;
+	  }*/
+	   header .navbar {
+	  	overflow: hidden;
+	  	position: absolute;
+	  	left: 50%;
+	  	transform: translate(-50%,0);
+	  	margin: 0 auto;
+	  }
+
+	  header .logo {
+	  	font-size: 40px;
+	  	color: orange;
+	  	float: left;
+	  	margin-top: 20px;
+	  }
+	  header .logo:hover {
+	  	color: rgb(254,189,54);
+	  }
+
+	  header .navlist{
+	  	float:right;
+	  	margin-top:20px;
+	  	
+	  }
+	  
+	  header .navlist>li{
+	  	float: right;
+	  	margin: 15px 10px;
+	  }
+	  header .navlist>li>a {
+	  	display: block;
+	  	color: #fff;
+	  }
+	  header .navlist>li>a:hover{
+	  	color:orange;
+	  }
+	  header .navlist>li>a:active{
+	  	color:gold;
+	  }
+
+	  header .intro{
+	  	text-align:center;
+	  	/*margin:0 auto; 这个有问题, 需再考虑其他方法*/
+	  	display: inline-block;
+	  	/*vertical-align:middle;*/
+	  	position:absolute; /* 父元素就要 relative */
+	  	top:50%;
+	  	left:50%;
+	  	transform: translate(-50%,-50%); /* 用这种方法比较好,因为画面上的 字 也跟着浏览器 缩变而缩变了 */
+
+
+	  }
+	
+	  header .intro>h1 {
+	  	font-size:80px;
+	  	text-shadow: 1px 2px 2px #333;
+	  } 
+	  header .intro > h1 sup:hover{
+	    -webkit-text-stroke: 1px cyan;
+	  }
+	  header .intro>h3 {
+	  	font-size:40px;
+	  	/*text-shadow: 1px 1px 2px #333;*/
+	  	font-weight:100;
+	  	font-style:italic;
+	  }
+	  header .button{
+	  	display: inline-block;
+	  	margin-top:50px;
+		width:200px;
+		height:60px;
+	    padding: 15px 0;
+	    background: orange ;
+	    
+	    
+	    font-size:20px;
+	    color: #fff;
+	    line-height:30px;
+	    border-radius:5px;
+	    /*opacity:0.8;*/
+	    
+	  }
+	  header .button:hover{
+		box-shadow: 0 8px 10px rgba(0,0,0,0.3);
+		opacity:1;
+		background-color: rgb(254,189,54);
+		transform: translate(0,-2px);
+	  }
+	  header .button:active{		
+		opacity:1;
+		font-size:21px;		
+	  }
+      main{
+      	color: #222;	
+      	margin: 0 auto;
+      }
+      main > div{
+      	background: rgba(247,247,247,1);
+      }
+      main > div:nth-of-type(3) {
+      	background: url(https://upload-images.jianshu.io/upload_images/6288846-d3331e6d37c061d6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) center center no-repeat;
+      	background-size: cover;
+      }
+
+      section {
+      	margin: 0 auto;
+      	overflow: hidden;
+      	text-align: center;
+      	
+      }
+      section > h2 {
+      	margin-top: 100px;
+        font-size: 40px;
+        letter-spacing: 3px;
+
+      }
+      section > p {
+      	margin-top:10px;
+      	margin-bottom: 50px;
+      	color: #aaa;
+      }
+      section > ul {
+		overflow: hidden;
+      }
+      section .ui-list > li {	
+      	float:left;
+      	width: 33.33%;
+      	padding: 50px 70px;	
+      }
+      section .ui-list > li div{
+      	display: inline-block;
+		width: 200px;
+		height: 200px;
+		
+		border-radius: 50%;
+		border: 6px solid #ccc;
+		background: #eee url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566231895811&di=cc66b8ff9388f1fcfb01fea4cf3f7873&imgtype=0&src=http%3A%2F%2Fpic.ffpic.com%2Ffiles%2F2015%2F0910%2F1507085574691108_s.jpg) no-repeat;
+		background-position: center center;
+		background-size: 200%;
+
+      }
+      section .ui-list > li div:hover {
+      	border: 6px solid rgb(254,189,54);
+      	box-shadow: 0 3px 6px 2px rgba(0,0,0,0.1);
+      	transform: translateY(-3px);
+      }
+      section .ui-list > li img {
+      	text-align: center;
+      	display: inline-block;
+		width: 200px;
+		height: 200px;
+		background: #eee;
+		border-radius: 50%;
+		border: 4px solid #ddd;
+      }
+      section > ul h3 {
+      	font-size:20px;
+      	margin-top: 20px;
+      } 
+      section > ul p{
+      	text-indent: 2em;
+      	margin-top:15px;
+      }
+
+      section > .fig-box { 
+      	margin: 40px;
+      	overflow: hidden;
+
+      }
+	  
+      section > .fig-box figure {
+      	width: calc( 33.33% - 20px);
+      	height: 340px;
+      	margin: 30px 10px;
+      	float: left;
+      	background: #fff;	
+      }
+      section > .fig-box figure:hover {
+      	border: 1px solid #eee;
+      	box-shadow: 0 3px 6px 2px rgba(0,0,0,0.1);
+      	transform: translateY(-3px);
+      }
+      section > .fig-box a {
+      	 display: block;
+      	 height: 240px;
+      }
+      section > .fig-box img {
+      	 width: 100%;
+      	 height: 100%;
+      }
+      section > .fig-box figcaption {
+      	 font-size: 24px;
+      	 margin: 10px auto;
+      }
+      section > .fig-box p {
+      	margin: 0 20px;
+      	color: #666;
+      	font-size: 12px;
+
+      }
+
+	  section > .cg-list li {
+	  	margin: 50px;
+	  	padding-right: calc(50% - 258px);
+	  	text-align: right;
+	  	position: relative;
+	  }
+      section > .cg-list li::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      section > .cg-list img {
+      	float: right;
+      	width: 400px;
+      	height: 250px;
+      	/*border: 2px groove orange;*/
+      	border-radius: 5px;
+      }
+      section > .cg-list img:hover {
+      	box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      	transform: translateX(60px) scale(1.1);
+
+      }
+      section > .cg-list .img-even:hover {
+      	box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      	transform: translateX(-60px) scale(1.1);
+      }
+      section > .cg-list .img {
+      	float: right;
+      	margin-top: 100px;
+      	width: 300px;
+      	height: 300px;
+      	background: rgba(255,255,0,0.6);
+      	border-radius: 100%;
+      	padding-top: 140px;
+      	text-align: center;
+      	font-size: 20px;
+      	letter-spacing: 10px;
+      	font-weight: bold;
+      	color: #666;
+      	transform: translate(-18%);
+      }
+      section > .cg-list .img:hover {
+      	background: rgba(255,255,0,1);	
+      	font-size: 22px;
+      	font-weight: bold;
+      	color: #444;
+      	box-shadow: 0 10px 10px -10px rgba(0,0,0,0.2) ;
+      }
+
+      section > .cg-list dl {
+      	margin-right: 450px;
+      	position: absolute;
+      	top: calc(50% - 50%);
+      	right: 40%;
+      }
+      section .cg-list > li:nth-child(even) {
+      	margin: 50px;
+      	/*color: red;*/
+      	/*padding-right: calc(50% - 258px);*/
+      	text-align: left;
+      	position: relative;
+      }
+      section .cg-list > li:nth-child(even) dl {
+      	position: absolute;
+      	/*margin-right: 0;
+      	margin-left: 400px;*/
+      	transform: translate(950px, 0);
+      }
+      section .cg-list dt {
+      	font-size: 20px;
+      	font-weight: bold;
+      }
+     /* section .cg-list dd:nth-of-type(1) {
+      	color: red;
+      }*/
+      section .cg-list dd:nth-child(2) {
+      	color: #666;
+      	font-size: 16px;
+      	font-weight: bold;
+
+      }
+      section .cg-list>li::before {
+      	position: absolute;
+      	left: 50%;
+      	margin-left: 0px;
+      	top: 250px;
+      	content: '';
+      	display: inline-block;
+		height: 51px;
+	   width: 2px;
+	   background-color: tan;
+      }
+      section .cg-list > li:nth-last-child(2)::before{
+      	height: 151px;
+      }
+      section .cg-list > li:last-child::before {
+	    height: 0;
+      }
+      section .font-list {
+        	
+      }
+      section .font-list > li {
+      	float: left;
+      	width: 33.33%;
+      	padding: 30px 20px;
+      	text-align: center;
+      }
+      section .font-list > li div {
+      	width: 300px;
+      	height: 300px;
+      	border: 6px solid #ddd;
+      	border-radius: 50%;
+      	margin: 0 auto;
+      }
+      section .font-list > li div:hover {
+      	border: 6px solid rgb(254,189,54);
+      	box-shadow: 0 3px 6px 2px rgba(0,0,0,0.1);
+      	transform: translateY(-3px);
+      }
+      section .font-list > li:nth-of-type(1) div {   	
+      	background: red url(https://img.zcool.cn/community/01d82b58b1056ea801219c77cd9ad5.jpg@2o.jpg) center center no-repeat;
+      	background-size: cover;
+      	background-position: 0 -50px ;
+      }
+      section .font-list > li:nth-of-type(2) div {
+      	background: red url(https://img.zcool.cn/community/01fb3d58b10569a801219c77365e0e.jpg@2o.jpg) center center no-repeat;
+      	background-size: 160%;
+      	background-position: center -20px;
+      }
+      section .font-list > li:nth-of-type(3) div {
+      	background: red url(https://img.zcool.cn/community/01fc4e58b10567a801219c7782bdc5.jpg@2o.jpg) center center no-repeat;
+      	background-size: cover;
+      	background-position: center -60px;
+      }
+	 section .font-list li > h3 {
+	 	font-size: 25px;
+	    margin-top: 20px;
+	 }
+	 section .font-list li > span {
+	 	display: inline-block;
+	 	margin: 20px 10px;
+	 	
+	 	background: #444;
+	 	width: 50px;
+	 	height: 30px;
+	 	text-align: center;
+	 	line-height: 30px;
+	 	color: #ddd;
+	 	border-radius: 5px;
+	 	letter-spacing: 2px;
+	 }
+	 section .font-list li > span:hover{
+	 	/*background: orange;*/
+	 	color: rgb(254,189,54);
+	 	letter-spacing: 3px;
+	 	font-weight: bold;
+	 	background: #333;
+
+	 }
+	 section .bottom-text {
+	 	margin-top: 50px;
+	 }
+	 section .font-list1 li {
+	 	float: left;
+	 	width: 25%;
+	 }
+	 section .font-list1 li > img {
+	 	width: 130px;
+	 	height: 90px;
+	 	
+
+	 }
+	 .last-sec {
+	 	text-align: center;
+	 	/*background: #333;*/
+	 	color: white;	
+	 }
+	 .last-sec > p {
+	 	color: #888;
+	 }
+	 .last-sec > .inp1 {
+	 	margin-top: 40px;
+	 	float: left;
+	 }
+	 .last-sec > .inp1 li input {
+	 	width: 550px;
+	 	height: 70px;
+	 	margin: 10px 30px;
+	 	border-radius: 8px;
+	 	outline: none;
+	 }
+	 .last-sec > .inp2 {
+	 	float: right;
+	 	width: 550px;
+	 	height: 250px;
+	 	margin-top: 50px;
+	 	margin-right: 30px;
+	 	border-radius: 8px;
+	 	padding: 15px;
+	 	outline: none;
+	 }
+	 .last-sec > .inp1 li input::placeholder {
+	 	font-size: 15px;
+	 	font-weight: bold;
+	 	color: #ccc;
+	 }
+	 .last-sec > .inp2::placeholder {
+	 	font-size: 20px;
+	 	font-weight: bold;
+	 	color: #ccc;
+	 	letter-spacing: 1px;
+	 }
+	 .last-sec a {
+	 	display: inline-block;
+	 	width: 250px;
+	 	height: 65px;
+	 	background: orange;
+	 	margin: 60px auto;
+	 	line-height: 65px;
+	 	font-size: 20px;
+	 	font-weight: bold;
+	 	color: white;
+	 	border-radius: 8px;
+	 	position: relative;
+	 	left: -301px;
+	 	margin-bottom: 150px;
+	 }
+	 .last-sec a:hover {
+	 	background: rgb(254,189,54); 
+	 }
+
+    /*footer {
+    	text-align: center;
+    	color: #333;
+    }
+    footer span {
+    	margin: 35px 0;
+    	margin-left: 500px;
+    	float: left;
+
+    }
+    footer div {
+    	margin: 35px 0;
+    	margin-right: 500px;
+    	float: right;
+
+    }
+    footer div > a {
+    	color: orange;
+    	margin-left: 15px;
+    }
+    footer > ul {
+        position: relative;
+        top: 23px;
+        left: 207px;
+    
+    }
+    footer ul > li{
+    	float: left;
+    	margin-left: 8px;
+
+
+    }
+    footer ul > li a {
+    	display: inline-block;
+    	width: 40px;
+    	height: 40px;
+    	background: #333;
+    	color: white;
+
+    	border-radius: 50%;
+    	line-height: 40px;
+    }
+    footer ul > li a:hover {
+    	background: orange;
+    }
+    footer .iconfont {
+    	font-size: 25px;
+    }*/
+    
+   .f1 ul li {
+   	 float: left;
+   	 width: 33.33%;
+   	 color: #333;
+   	 text-align: center;  
+
+   }
+   .f1 ul li span {
+   	  float: right;
+   	  margin: 30px;
+   }
+   .f1 ul li:nth-of-type(3) a {
+   	  float: left;
+   	  color: orange;
+   	 
+   	  margin: 30px;
+   	  margin-right: 3px;
+   }
+   .f1 ul li:nth-of-type(2) a {
+   	    display: inline-block;
+   	    margin: 23px;
+		margin-right: -7px;
+		width: 40px;
+		height: 40px;
+		background: #555;
+		color: white;
+
+		border-radius: 50%;
+		line-height: 40px;        
+   }
+   .f1 ul li:nth-of-type(2) a:hover {
+   	    background: rgb(254,189,54);
+   }
+   .iconfont {
+   	  font-size: 22px;
+   	  color: white;
+   }
+
+
+	</style>
+</head>
+<body>
+ <header>
+ 	 <div class="navbar layout clearfix">
+ 	 	<a href="#" class="logo">ME'CGWORKS</a>
+ 	 	<ul class="navlist">
+ 	 		<li><a href="#contact">CONTACT</a></li>
+ 	 		<li><a href="#font">FONT DESIGN</a></li>
+ 	 		<li><a href="#cg">CG PAINTING</a></li>
+ 	 		<li><a href="#poster">POSTER DESIGN </a></li>
+ 	 		<li><a href="#icon">ICON </a></li>
+ 	 	</ul>
+ 	 </div>
+ 	 <div class="intro layout">
+ 	 	<h3>Welcome To My Wolrd!</h3>
+ 	 	<h1>IT'S NICE TO MEET YOU <sup>☺</sup></h1>
+ 	 	<a href="#" class="button">TELL ME MORE</a>
+ 	 </div>
+ </header>
+ <main>
+ 	<section id="icon" class="layout">
+	   <h2>ICON设计</h2>
+	   <p>一个好的图标,可以让用户「一秒即懂」</p>
+	   <ul class="ui-list clearfix">
+	   	<li>
+	   		<div class="img1" style=" background: url(https://upload-images.jianshu.io/upload_images/6288846-be43b540918db448.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) center center no-repeat; background-size: cover"></div>
+	   		<h3>后现代感头盔</h3>
+	   		<p>UI-icon具有指代意义的图形符号，具有高度浓缩并快捷传达信息、便于记忆的特性</p>
+	   	</li>
+	   	<li>
+	   		<div class="img2" style=" background: url(https://upload-images.jianshu.io/upload_images/6288846-20151fd5677c08be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) center center no-repeat; background-size: cover"></div>
+	   		<h3>酷炫跑车</h3>
+	   		<p>UI-icon具有指代意义的图形符号，具有高度浓缩并快捷传达信息、便于记忆的特性</p>
+	   	</li>
+	   	<li>
+	   		<div class="img3" style=" background: url(https://upload-images.jianshu.io/upload_images/6288846-b85704da9d6a23fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) center center no-repeat; background-size: cover"></div>
+	   		<h3>功能胶囊</h3>
+	   		<p>UI-icon具有指代意义的图形符号，具有高度浓缩并快捷传达信息、便于记忆的特性</p>
+	   	</li>
+	   	<li>
+	   		<div class="img4" style=" background: url(https://upload-images.jianshu.io/upload_images/6288846-909fec9e630b755a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) center center no-repeat; background-size: cover"></div>
+	   		<h3>剁椒鱼头</h3>
+	   		<p>UI-icon具有指代意义的图形符号，具有高度浓缩并快捷传达信息、便于记忆的特性</p>
+	   	</li>
+	   	<li>
+	   		<div class="img5" style=" background: url(https://upload-images.jianshu.io/upload_images/6288846-b98bc9f523a8b8d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) center center no-repeat; background-size: cover"></div>
+	   		<h3>红烧猪蹄</h3>
+	   		<p>UI-icon具有指代意义的图形符号，具有高度浓缩并快捷传达信息、便于记忆的特性</p>
+	   	</li>
+	   	<li>
+	   		<div class="img6" style=" background: url(https://upload-images.jianshu.io/upload_images/6288846-0a11334238610911.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) center center no-repeat; background-size: cover"></div>
+	   		<h3>通卡手机刷卡</h3>
+	   		<p>UI-icon具有指代意义的图形符号，具有高度浓缩并快捷传达信息、便于记忆的特性</p>
+	   	</li>
+	   </ul>
+ 	</section>
+  <div>
+ 	<section id="poster" class="layout">
+ 	   <h2>海报设计</h2>
+ 	   <p>通过相关设计软件来为实现表达广告目的和意图<br>所进行平面艺术创意性的一种设计活动或过程</p>
+ 	   <div class="fig-box clearfix">
+ 	     <figure>
+ 	       <a href="">
+	 	       <img src="https://upload-images.jianshu.io/upload_images/6288846-eab6eeec62129503.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看">
+	 	    </a>
+ 	       <figcaption>页游登入页面</figcaption>
+ 	       <p>海报:运用图片、文字、色彩、空间等要素进行完整的结合，以恰当的形式向人们展示出宣传信息</p>
+ 	     </figure>
+ 	     <figure>
+ 	       <a href="">
+	 	       <img src="https://upload-images.jianshu.io/upload_images/6288846-d65fb5cba92f7fd0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看">
+	 	    </a>
+ 	       <figcaption>页游登入页面</figcaption>
+ 	       <p>海报:运用图片、文字、色彩、空间等要素进行完整的结合，以恰当的形式向人们展示出宣传信息</p>
+ 	     </figure>
+ 	     <figure>
+ 	       <a href="">
+	 	       <img src="https://upload-images.jianshu.io/upload_images/6288846-446db467517e78ac.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看">
+	 	    </a>
+ 	       <figcaption>角色属性介绍</figcaption>
+ 	       <p>海报:运用图片、文字、色彩、空间等要素进行完整的结合，以恰当的形式向人们展示出宣传信息</p>
+ 	     </figure>
+ 	     <figure>
+ 	       <a href="">
+	 	       <img src="https://upload-images.jianshu.io/upload_images/6288846-546820833166ffe2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看">
+	 	    </a>
+ 	       <figcaption>角色属性介绍</figcaption>
+ 	       <p>海报:运用图片、文字、色彩、空间等要素进行完整的结合，以恰当的形式向人们展示出宣传信息</p>
+ 	     </figure>
+ 	     <figure>
+ 	       <a href="">
+	 	       <img src="https://upload-images.jianshu.io/upload_images/6288846-623dd7e21b6f6e60.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看">
+	 	    </a>
+ 	       <figcaption>圣诞节主题</figcaption>
+ 	       <p>海报:运用图片、文字、色彩、空间等要素进行完整的结合，以恰当的形式向人们展示出宣传信息</p>
+ 	     </figure>
+ 	     <figure>
+ 	       <a href="">
+	 	       <img src="https://upload-images.jianshu.io/upload_images/6288846-203b5e23cf1829f1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看">
+	 	    </a>
+ 	       <figcaption>滴滴宣传</figcaption>
+ 	       <p>海报:运用图片、文字、色彩、空间等要素进行完整的结合，以恰当的形式向人们展示出宣传信息</p>
+ 	     </figure>
+ 	     <figure>
+ 	       <a href="">
+	 	       <img src="https://upload-images.jianshu.io/upload_images/6288846-76b1ec0d7c4606e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看">
+	 	    </a>
+ 	       <figcaption>商品活动</figcaption>
+ 	       <p>海报:运用图片、文字、色彩、空间等要素进行完整的结合，以恰当的形式向人们展示出宣传信息</p>
+ 	     </figure>
+ 	   </div>
+ 	</section>
+  </div>
+ 	<section id="cg" class="layout">
+ 	   <h2>CG绘画</h2>
+ 	   <p>运用绘图软件和数位板在电脑端进行的绘画艺术</p>
+ 	    <ul class="cg-list">
+ 	      <li>
+	 	     <img src="https://img.zcool.cn/community/012c595a378b58a80121db80317454.jpg@2o.jpg" alt="星爷">
+	 	     <dl>
+		 	   	 <dt>星 爷</dt>
+		 	   	 <dd>忧郁之眼神</dd>
+		 	   	 <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+	 	     </dl>
+	 	  </li>
+	 	  <li>
+	 	     <img class="img-even" src="https://upload-images.jianshu.io/upload_images/6288846-c0ffc4d314ad2d2d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/972/format/webp" alt="石膏头像">
+	 	     <dl>
+		 	   	 <dt>石膏头像</dt>
+		 	   	 <dd>马尔斯</dd>
+		 	   	 <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+	 	     </dl>
+	 	  </li>
+	 	  <li>
+	 	     <img src="https://img.zcool.cn/community/01a59858b3cb8fa801219c77a61973.jpg@2o.jpg" alt="小老鼠">
+	 	     <dl>
+		 	   	 <dt>蘑菇下休憩的小鼠</dt>
+		 	   	 <dd>偷得浮生半日闲</dd>
+		 	   	 <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+	 	     </dl>
+	 	  </li>
+	 	  <li>
+	 	     <img class="img-even" src="https://img.zcool.cn/community/01c53d58b5b881a801219c77765f27.jpg@2o.jpg" alt="小猫咪">
+	 	     <dl>
+		 	   	 <dt>养神的猫咪</dt>
+		 	   	 <dd>风和日丽适合懒躺</dd>
+		 	   	 <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+	 	     </dl>
+	 	  </li>
+	 	   <li>
+	 	     <img src="https://img.zcool.cn/community/019e6958b3cb8ea801219c77f9ebc4.jpg@2o.jpg" alt="荷叶">
+	 	     <dl>
+		 	   	 <dt>荷池一角</dt>
+		 	   	 <dd>静谧安详沁人</dd>
+		 	   	 <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</dd>
+	 	     </dl>
+	 	  </li>
+	 	  <li>
+	 	    <span class="img">更多精彩CG作品</span>
+	 	  </li>
+ 	     </ul>
+ 	</section>
+  <div>	
+ 	<section id="font" class="layout">
+ 	   <h2>字体设计</h2>
+ 	   <p>文字设计是指对文字按视觉设计规律加以整体的精心安排</p>
+ 	   <ul class="font-list clearfix">
+	   	<li>
+	   		<div></div>
+	   		<h3>热血青年</h3>
+	   		<span>书法</span><span>黑金</span><span>酷炫</span>
+	   	</li>
+	   	<li>
+	   		<div></div>
+	   		<h3>杀破狼</h3>
+	   		<span>书法</span><span>热血</span><span>霸气</span>	
+	   	</li>
+	   	<li>
+	   		<div></div>
+	   		<h3>浪客行</h3>
+	   		<span>书法</span><span>黑白</span><span>沉重</span>
+	   	</li>
+	   </ul>
+	   <p class="bottom-text">文字是人类文化的重要组成部分。无论在何种视觉媒体中，文字和图片都是其两大构成要素。<br>
+	   文字排列组合的好坏直接影响其版面的视觉传达效果。<br>
+	   因此，文字设计是文字设计，提高作品的诉求力，赋予作版面审美价值的一种重要构成技术。</p>
+ 	</section>
+  </div>
+ 	<section class="layout">
+ 	    <ul class="font-list1">
+ 	        <li><img src="https://upload-images.jianshu.io/upload_images/6288846-8dfe685c008e407b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看"></li>
+ 	        <li><img src="https://upload-images.jianshu.io/upload_images/6288846-f08ea8ffa100a0a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看"></li>
+ 	        <li><img src="https://upload-images.jianshu.io/upload_images/6288846-3e764b8bc98187ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看"></li>
+ 	        <li><img src="https://upload-images.jianshu.io/upload_images/6288846-83563d3dd7a23a14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="点击查看"></li>
+ 	    </ul>
+ 	</section>
+  <div>	
+ 	<section class="last-sec layout" id="contact">
+	   <h2>CONTACT US</h2>
+	   <p>Lorem ipsum dolor sit amet consectetur.</p>	  
+
+	   <ul class="inp1">
+	   	  	<li><input type="text" placeholder="YOUR NAME*"></li>
+	   	  	<li><input type="text" placeholder="YOUR EMAI*"></li>
+	   	  	<li><input type="text" placeholder="YOUR PHONE*"></li>	   	  	
+	   </ul>	   	  	   
+	   <textarea class="inp2" name="" id="" cols="30" rows="10" placeholder="YOUR MASSAGE**"></textarea>
+	   <a href="#">SEND MESSAGE</a>
+ 	</section>
+  </div>
+ </main>
+ <!-- <footer>
+     
+    <span>Copyright @ Benyun Works</span>
+    <div>
+	    <a href="#">Privacy Policy</a>
+	    <a href="#">Terms of Use</a>
+    </div>
+    <ul>
+    	<li><a href="" class="iconfont icon-qq"></a></li>
+    	<li><a href="" class="iconfont icon-dd"></a></li>
+    	<li><a href="" class="iconfont icon-wx"></a></li>
+    </ul>   
+ </footer> -->
+ <footer class="f1">
+    <ul>
+    	<li><span>Copyright @ Benyun Works</span></li>
+    	<li>
+			<a href="" class="iconfont icon-qq"></a>
+			<a href="" class="iconfont icon-dd"></a>
+			<a href="" class="iconfont icon-wx"></a>
+    	</li>
+    	<li>
+			<a href="#">Privacy Policy</a>
+			<a href="#">Terms of Use</a>
+    	</li>
+    </ul>
+ </footer>
+
+</body>
+</html>
